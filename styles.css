@@ -1,0 +1,122 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #a3bce8;
+    font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: #ad186f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+    background-color: #9c155f;
+}
+
+.arrow {
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Input Styling */
+.search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    transition: width 0.3s ease;
+}
+
+.search-input:focus {
+    width: calc(100% - 100px);
+}
+
+/* Search Button Styling */
+.search-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #ad186f;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.search-button:hover {
+    color: #9c155f;
+}
+
+/* Fade In Animation for Dropdown */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Transition Effect for Search Container Shadow */
+.search-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}

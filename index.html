@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Search Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown()">Everything <span class="arrow">&#x25BC;</span></button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#" onclick="selectCategory('Everything')">Everything</a>
+                <a href="#" onclick="selectCategory('Software Development')">Software Development</a>
+                <a href="#" onclick="selectCategory('Web Development')">Web Development</a>
+                <a href="#" onclick="selectCategory('Data Analyst')">Data Analyst</a>
+                <a href="#" onclick="selectCategory('IT Consultant')">IT Consultant</a>
+                <a href="#" onclick="selectCategory('Network Administrator')">Network Administrator</a>
+            </div>
+        </div>
+        <input type="text" placeholder="Search Anything" class="search-input">
+        <button class="search-button">
+            <span class="search-icon">&#128269;</span>
+        </button>
+    </div>
+
+    <script>
+        // Toggle dropdown visibility
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        // Close the dropdown if clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Set selected category in button text
+        function selectCategory(category) {
+            document.querySelector(".dropdown-button").innerHTML = category + ' <span class="arrow">&#x25BC;</span>';
+            document.getElementById("dropdownMenu").classList.remove("show");
+        }
+    </script>
+</body>
+</html>
